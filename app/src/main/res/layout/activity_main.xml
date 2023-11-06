@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivAlbumCover"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:background="@color/gray"
+        android:src="@drawable/ic_music_note_24"
+        app:layout_constraintBottom_toTopOf="@id/tvNameGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNameGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintBottom_toTopOf="@id/tvNameSong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAlbumCover"
+        tools:text="Linkin Park" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNameSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/ibtnPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNameGroup"
+        tools:text="Numb" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibtnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_play_60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvNameSong"
+        app:layout_constraintStart_toStartOf="@id/tvNameSong"
+        app:layout_constraintTop_toBottomOf="@id/tvNameSong" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibtnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_pause_60"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/ibtnPlay"
+        app:layout_constraintStart_toStartOf="@id/ibtnPlay"
+        app:layout_constraintTop_toTopOf="@id/ibtnPlay" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibtnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_next_42"
+        app:layout_constraintBottom_toBottomOf="@id/ibtnPlay"
+        app:layout_constraintStart_toEndOf="@id/ibtnPlay"
+        app:layout_constraintTop_toTopOf="@id/ibtnPlay" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibtnPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_previous_42"
+        app:layout_constraintBottom_toBottomOf="@id/ibtnPlay"
+        app:layout_constraintEnd_toStartOf="@id/ibtnPlay"
+        app:layout_constraintTop_toTopOf="@id/ibtnPlay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
